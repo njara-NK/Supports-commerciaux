@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Agent Humain — Plaquette Opérationnelle & Offres Packagées</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#006590',
+                            dark: '#0E2A38',
+                            slate: '#475569',
+                            lightSlate: '#94A3B8',
+                            yellow: '#FFC72C',
+                            bgGray: '#F8FAFC',
+                            border: '#E2E8F0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FFFFFF;
+        }
+        .bento-card {
+            background-color: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            border-color: #006590;
+            box-shadow: 0 12px 30px -10px rgba(0, 101, 144, 0.12);
+        }
+        .active-dot {
+            background-color: #006590 !important;
+            width: 24px !important;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 0.4; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        .pulse-ring {
+            animation: pulse-ring 4s infinite ease-in-out;
+        }
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -40;
+            }
+        }
+        .animated-line {
+            stroke-dasharray: 8, 4;
+            animation: dash 2s linear infinite;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: #0E2A38 !important; }
+        }
+    </style>
+</head>
+<body class="text-brand-dark min-h-screen flex flex-col justify-between overflow-x-hidden bg-white">
+
+    <!-- HEADER -->
+    <header class="no-print w-full px-6 py-4 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-brand-border z-50">
+        <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-2">
+                <svg class="h-9 w-9 text-brand-blue" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="35" cy="50" r="8" fill="currentColor"/>
+                    <circle cx="65" cy="50" r="8" fill="#FFC72C"/>
+                    <path d="M50 25C58 25 65 30 65 30M35 70C35 70 42 75 50 75" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                </svg>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-brand-dark text-lg tracking-tight leading-none">L'Agent <span class="text-brand-blue">Humain</span></span>
+                    <span class="text-[10px] text-brand-lightSlate font-semibold tracking-wider uppercase mt-0.5">par etalik</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flex items-center space-x-4">
+            <span class="text-xs text-brand-slate font-medium bg-brand-bgGray px-3 py-1.5 rounded-full border border-brand-border">
+                agenthumain.fr
+            </span>
+        </div>
+    </header>
+
+    <!-- MAIN PRESENTATION CANVAS -->
+    <main class="flex-grow flex items-center justify-center px-4 py-8 md:px-12">
+        
+        <!-- SLIDE 0: TITLE & COUVERTURE -->
+        <div id="slide-0" class="slide-content w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-blue/10 text-brand-blue font-semibold text-xs uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-brand-blue animate-ping"></span>
+                    Présentation Opérationnelle
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-brand-dark leading-tight tracking-tight">
+                    L'humain ne travaille <span class="text-brand-blue">plus seul.</span><br>
+                    Il travaille avec des <span class="relative inline-block">
+                        agents IA
+                        <span class="absolute left-0 bottom-1 w-full h-2 bg-brand-yellow/30 -z-10"></span>
+                    </span>.
+                </h1>
+                <p class="text-lg text-brand-slate font-light max-w-xl leading-relaxed">
+                    Les entreprises qui l'ont compris prennent une longueur d'avance. Les autres la rattrapent.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <div class="flex items-center space-x-3 bg-brand-bgGray px-4 py-2.5 rounded-xl border border-brand-border">
+                        <i data-lucide="shield-check" class="text-brand-blue w-5 h-5"></i>
+                        <span class="text-xs text-brand-slate">Supervision humaine intégrale</span>
+                    </div>
+                    <div class="flex items-center space-x-3 bg-brand-bgGray px-4 py-2.5 rounded-xl border border-brand-border">
+                        <i data-lucide="activity" class="text-brand-blue w-5 h-5"></i>
+                        <span class="text-xs text-brand-slate">Performance optimisée</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-80 h-80 flex items-center justify-center">
+                    <div class="absolute inset-0 rounded-full border-2 border-brand-blue/10 pulse-ring"></div>
+                    <div class="absolute inset-8 rounded-full border border-dashed border-brand-blue/20"></div>
+                    
+                    <svg class="w-full h-full relative z-10" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M60 100 C 60 50, 140 50, 140 100" stroke="#006590" stroke-width="2" class="animated-line" />
+                        <path d="M140 100 C 140 150, 60 150, 60 100" stroke="#006590" stroke-width="2" class="animated-line" style="animation-delay: -1s;" />
+                        
+                        <g transform="translate(60, 100)">
+                            <circle r="22" fill="#006590" />
+                            <circle r="26" stroke="#006590" stroke-width="1.5" class="animate-ping" style="animation-duration: 3s;" />
+                            <path d="M-8 8 C-8 2, -4 -2, 0 -2 C4 -2, 8 2, 8 8 M0 -8 C-3 -8, -5 -6, -5 -3 C-5 0, -3 2, 0 2 C3 2, 5 0, 5 -3 C5 -6, 3 -8, 0 -8" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                        </g>
+                        
+                        <g transform="translate(140, 100)">
+                            <circle r="22" fill="#FFC72C" />
+                            <circle r="18" fill="#FFFFFF" />
+                            <circle r="22" stroke="#FFC72C" stroke-width="2" />
+                            <path d="M-5 0 L0 -2 L2 -7 L4 -2 L9 0 L4 2 L2 7 L0 2 Z" fill="#006590" />
+                        </g>
+
+                        <g transform="translate(100, 100)">
+                            <rect x="-24" y="-12" width="48" height="24" rx="12" fill="#0E2A38" />
+                            <text x="0" y="4" fill="#FFFFFF" font-size="8" font-weight="bold" text-anchor="middle">SYNERGIE</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 1: LE CONSTAT -->
+        <div id="slide-1" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-2">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">Analyse opérationnelle</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark">Le constat</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bento-card rounded-2xl p-6 md:col-span-2 space-y-4">
+                    <div class="h-10 w-10 rounded-lg bg-brand-blue/10 flex items-center justify-center">
+                        <i data-lucide="clock" class="text-brand-blue w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-dark">Le recrutement classique montre ses limites</h3>
+                    <p class="text-sm text-brand-slate leading-relaxed font-light">
+                        En France, il faut en moyenne 6 à 12 semaines pour pourvoir un poste. Plus de la moitié des cadres jugent ce processus trop long, trop rigide, mal ciblé.
+                    </p>
+                </div>
+                <div class="bento-card rounded-2xl p-6 space-y-4">
+                    <div class="h-10 w-10 rounded-lg bg-brand-yellow/20 flex items-center justify-center">
+                        <i data-lucide="shield-alert" class="text-brand-blue w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-dark">L'IA seule reste un risque</h3>
+                    <p class="text-sm text-brand-slate leading-relaxed font-light">
+                        Pendant ce temps, l'intelligence artificielle agentique change la donne : des agents capables d'exécuter des tâches complexes, en continu, sans jamais s'arrêter. Mais un agent seul, sans supervision humaine, reste un risque plus qu'une solution.
+                    </p>
+                </div>
+                <div class="bento-card rounded-2xl p-8 md:col-span-3 flex flex-col justify-center bg-gradient-to-r from-brand-bgGray to-white border-l-4 border-l-brand-blue">
+                    <p class="text-base md:text-lg text-brand-dark italic font-normal leading-relaxed">
+                        "La vraie avance ne se prend ni avec des humains seuls, ni avec de l'IA seule. Elle se prend avec les deux, organisés ensemble."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: CE QUE ÇA COÛTE DE NE PAS BOUGER -->
+        <div id="slide-2" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-2">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">Indicateurs financiers</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark">Ce que ça coûte de ne pas bouger</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                <div class="md:col-span-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <p class="text-lg text-brand-slate font-light leading-relaxed">
+                            Le coût réel d'un recrutement est sous-évalué de <strong class="text-brand-blue font-bold">60 à 80%</strong> dans la majorité des PME et ETI françaises. Ce qu'on voit sur la facture n'est qu'une partie du problème.
+                        </p>
+                        <p class="text-sm text-brand-slate font-light leading-relaxed">
+                            Et pendant que vous cherchez le bon profil, vos concurrents qui ont déjà organisé leurs équipes autour de talents dédiés et d'agents IA continuent d'avancer.
+                        </p>
+                    </div>
+                    <div class="p-4 bg-brand-yellow/10 border-l-4 border-brand-yellow rounded-r-xl">
+                        <span class="text-xs font-bold text-brand-dark uppercase tracking-wider block mb-1">Mise en garde</span>
+                        <p class="text-xs text-brand-slate">La vacance prolongée de vos postes clés bride directement votre croissance.</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bento-card rounded-2xl p-6 flex flex-col justify-center items-center text-center space-y-2">
+                        <span class="text-5xl font-black text-brand-blue">jusqu'à 23%</span>
+                        <h4 class="text-sm font-bold text-brand-dark">Perte de productivité</h4>
+                        <p class="text-xs text-brand-slate">pendant toute la durée de la vacance du poste.</p>
+                    </div>
+                    <div class="bento-card rounded-2xl p-6 flex flex-col justify-center items-center text-center space-y-2">
+                        <span class="text-2xl font-black text-brand-dark">30k€ à 150k€</span>
+                        <h4 class="text-sm font-bold text-brand-blue">Coût d'un recrutement raté</h4>
+                        <p class="text-xs text-brand-slate">en prenant en compte l'ensemble des frais et sanctions comprises.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: QUI EST L'AGENT HUMAIN -->
+        <div id="slide-3" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-2">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">Qui sommes-nous ?</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark">Qui est L'Agent Humain</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-7 space-y-6">
+                    <p class="text-base text-brand-slate leading-relaxed font-light">
+                        L'Agent Humain est né d'Etalik, société de services numériques présente à Marseille, Paris et Antananarivo.
+                    </p>
+                    <p class="text-base text-brand-slate leading-relaxed font-light">
+                        Notre conviction : la meilleure performance opérationnelle ne vient ni du tout humain, ni du tout automatisé, mais d'un travail organisé entre les deux.
+                    </p>
+                    <p class="text-base text-brand-slate leading-relaxed font-light">
+                        Nous déployons des talents dédiés, humains et augmentés par l'IA, ainsi que des agents IA supervisés, pour opérer une partie de votre activité avec le même niveau d'exigence que si c'était en interne.
+                    </p>
+                </div>
+                
+                <div class="md:col-span-5 grid grid-cols-1 gap-4">
+                    <div class="bento-card rounded-2xl p-5 flex items-center space-x-4">
+                        <div class="h-12 w-12 rounded-xl bg-brand-blue/10 flex items-center justify-center shrink-0">
+                            <i data-lucide="map-pin" class="text-brand-blue w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-brand-lightSlate uppercase block">Écosystème Etalik</span>
+                            <span class="text-sm font-semibold text-brand-dark block mt-0.5">Marseille • Paris • Antananarivo</span>
+                        </div>
+                    </div>
+                    <div class="bento-card rounded-2xl p-5 flex items-center space-x-4">
+                        <div class="h-12 w-12 rounded-xl bg-brand-yellow/20 flex items-center justify-center shrink-0">
+                            <i data-lucide="users" class="text-brand-blue w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-brand-lightSlate uppercase block">Modèle opérationnel</span>
+                            <span class="text-sm font-semibold text-brand-dark block mt-0.5">Talents dédiés augmentés & supervisés</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: L'ANCIENNE MÉTHODE VS LA NOUVELLE -->
+        <div id="slide-4" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-2">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">Analyse comparative</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark">L'ancienne méthode vs la nouvelle</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                <div class="border border-brand-border bg-brand-bgGray/50 rounded-2xl p-8 space-y-6 opacity-70">
+                    <h3 class="text-xl font-bold text-brand-lightSlate flex items-center gap-2">
+                        <i data-lucide="minus-circle" class="w-5 h-5"></i>
+                        Le modèle classique
+                    </h3>
+                    <ul class="space-y-4 text-sm text-brand-slate font-light">
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-red-400 mt-0.5 font-bold">•</span>
+                            Recrutement en 6 à 12 semaines, sans garantie de résultat.
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-red-400 mt-0.5 font-bold">•</span>
+                            Un coût fixe, quel que soit le volume d'activité réel.
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-red-400 mt-0.5 font-bold">•</span>
+                            Une seule compétence par poste.
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-red-400 mt-0.5 font-bold">•</span>
+                            Aucune capacité d'absorption des pics sans embauche supplémentaire.
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-red-400 mt-0.5 font-bold">•</span>
+                            L'intelligence artificielle reste un sujet à part, jamais vraiment intégré au quotidien des équipes.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="border-2 border-brand-blue bg-white rounded-2xl p-8 space-y-6 shadow-xl shadow-brand-blue/5">
+                    <h3 class="text-xl font-bold text-brand-dark flex items-center gap-2">
+                        <i data-lucide="check-circle2" class="text-brand-blue w-5 h-5"></i>
+                        Le modèle L'Agent Humain
+                    </h3>
+                    <ul class="space-y-4 text-sm text-brand-dark font-normal">
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-brand-blue mt-0.5 font-bold">✓</span>
+                            Un talent opérationnel en quelques jours.
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-brand-blue mt-0.5 font-bold">✓</span>
+                            Un coût ajusté à votre volume réel.
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-brand-blue mt-0.5 font-bold">✓</span>
+                            Des équipes formées à plusieurs compétences.
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-brand-blue mt-0.5 font-bold">✓</span>
+                            Une capacité qui s'ajuste à vos pics sans embauche d'urgence.
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-brand-blue mt-0.5 font-bold">✓</span>
+                            L'intelligence artificielle intégrée nativement, à chaque mission, du premier jour.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: CE QUE VOUS GAGNEZ -->
+        <div id="slide-5" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-2">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">Bénéfices clés</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark">Ce que vous gagnez</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bento-card rounded-2xl p-6 space-y-4">
+                    <div class="h-10 w-10 rounded-lg bg-brand-blue/10 flex items-center justify-center">
+                        <i data-lucide="settings" class="text-brand-blue w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brand-dark">Optimisation de vos opérations back-office</h3>
+                    <p class="text-xs text-brand-slate leading-relaxed font-light">
+                        Vos processus tournent, pilotés et documentés, sans mobiliser vos équipes internes sur des tâches à faible valeur ajoutée.
+                    </p>
+                </div>
+                <div class="bento-card rounded-2xl p-6 space-y-4">
+                    <div class="h-10 w-10 rounded-lg bg-brand-blue/10 flex items-center justify-center">
+                        <i data-lucide="trending-up" class="text-brand-blue w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brand-dark">Économie sur vos coûts OPEX</h3>
+                    <p class="text-xs text-brand-slate leading-relaxed font-light">
+                        Un modèle ajusté à votre volume réel, sans les coûts fixes et cachés du recrutement classique.
+                    </p>
+                </div>
+                <div class="bento-card rounded-2xl p-6 space-y-4">
+                    <div class="h-10 w-10 rounded-lg bg-brand-blue/10 flex items-center justify-center">
+                        <i data-lucide="shield-check" class="text-brand-blue w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brand-dark">Zéro risque RH</h3>
+                    <p class="text-xs text-brand-slate leading-relaxed font-light">
+                        Aucune gestion de contrat de travail, aucun risque prud'homal, aucune charge administrative liée à l'emploi.
+                    </p>
+                </div>
+                <div class="bento-card rounded-2xl p-6 space-y-4">
+                    <div class="h-10 w-10 rounded-lg bg-brand-blue/10 flex items-center justify-center">
+                        <i data-lucide="expand" class="text-brand-blue w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brand-dark">Flexibilité totale</h3>
+                    <p class="text-xs text-brand-slate leading-relaxed font-light">
+                        Vous ajustez le volume selon votre activité, sans préavis de l'employeur ni période de carence.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: NOTRE ARCHITECTURE, TROIS NIVEAUX D'ENGAGEMENT -->
+        <div id="slide-6" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-2">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">Méthodologie globale</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark">Notre architecture, trois niveaux d'engagement</h2>
+            </div>
+            
+            <p class="text-sm text-brand-slate max-w-3xl font-light">
+                Selon votre besoin et votre maturité, nous intervenons à trois niveaux, seuls ou combinés. À chaque niveau, l'intelligence artificielle est intégrée nativement, pas ajoutée après coup.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                <div class="bento-card rounded-2xl p-6 space-y-3 border-l-4 border-l-brand-blue">
+                    <span class="text-xs font-bold text-brand-blue">NIVEAU 1</span>
+                    <h3 class="text-lg font-bold text-brand-dark">Talents dédiés</h3>
+                    <p class="text-xs text-brand-slate leading-relaxed font-light">
+                        Des collaborateurs affectés directement à votre activité, à temps plein ou en pack, dopés à l'IA sur leur métier.
+                    </p>
+                </div>
+                <div class="bento-card rounded-2xl p-6 space-y-3 border-l-4 border-l-brand-yellow">
+                    <span class="text-xs font-bold text-brand-blue">NIVEAU 2</span>
+                    <h3 class="text-lg font-bold text-brand-dark">Opérations pilotées</h3>
+                    <p class="text-xs text-brand-slate leading-relaxed font-light">
+                        Des missions encadrées et mesurées par nos équipes, pour faire tourner un processus précis sans le porter en interne.
+                    </p>
+                </div>
+                <div class="bento-card rounded-2xl p-6 space-y-3 border-l-4 border-l-brand-dark">
+                    <span class="text-xs font-bold text-brand-blue">NIVEAU 3</span>
+                    <h3 class="text-lg font-bold text-brand-dark">Agents IA sur mesure</h3>
+                    <p class="text-xs text-brand-slate leading-relaxed font-light">
+                        La conception, le déploiement et la supervision continue d'agents IA pour automatiser ce qui peut l'être, sans jamais perdre le contrôle.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: NIVEAU 1 : LES TALENTS DÉDIÉS -->
+        <div id="slide-7" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-2">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">Niveau 1</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark">Niveau 1 : les talents dédiés</h2>
+            </div>
+            
+            <p class="text-sm text-brand-slate font-light">
+                Des collaborateurs qualifiés, expérimentés auprès d'entreprises européennes, francophones et opérationnels immédiatement sur votre activité.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start pt-2">
+                <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-5 bg-brand-bgGray rounded-xl space-y-2 border border-brand-border">
+                        <h4 class="text-sm font-bold text-brand-dark flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>
+                            Relation client et support
+                        </h4>
+                        <p class="text-xs text-brand-slate font-light">Support client, SAV, helpdesk niveau 1, gestion de call center entrant et sortant.</p>
+                    </div>
+                    <div class="p-5 bg-brand-bgGray rounded-xl space-y-2 border border-brand-border">
+                        <h4 class="text-sm font-bold text-brand-dark flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>
+                            Commercial et développement
+                        </h4>
+                        <p class="text-xs text-brand-slate font-light">Génération de leads, cold call, prise de rendez-vous, assistanat commercial.</p>
+                    </div>
+                    <div class="p-5 bg-brand-bgGray rounded-xl space-y-2 border border-brand-border">
+                        <h4 class="text-sm font-bold text-brand-dark flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>
+                            Technique
+                        </h4>
+                        <p class="text-xs text-brand-slate font-light">Développeurs web et mobile, QA et testeurs, designers UI/UX.</p>
+                    </div>
+                    <div class="p-5 bg-brand-bgGray rounded-xl space-y-2 border border-brand-border">
+                        <h4 class="text-sm font-bold text-brand-dark flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>
+                            Back-office et gestion
+                        </h4>
+                        <p class="text-xs text-brand-slate font-light">Comptabilité, assistanat administratif, gestion documentaire.</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-4 bg-brand-bgGray border border-brand-blue/30 rounded-2xl p-6 space-y-4">
+                    <h3 class="text-sm font-bold text-brand-dark flex items-center gap-2">
+                        <i data-lucide="globe" class="text-brand-blue w-4 h-4"></i>
+                        Pourquoi Madagascar fonctionne
+                    </h3>
+                    <p class="text-xs text-brand-slate leading-relaxed font-light">
+                        Même fuseau horaire que la France, à une ou deux heures près. Un pays francophone, une infrastructure moderne et sécurisée, un encadrement local structuré.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: LES OFFRES PACKAGÉES - LE SOCLE COMMUN & LEAD CARE -->
+        <div id="slide-8" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-1">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">Niveau 2 — Offres Packagées (A)</span>
+                <h2 class="text-2xl font-extrabold text-brand-dark">Équipes dédiées : activité commerciale & marketing</h2>
+                <p class="text-xs text-brand-slate font-light">Des processus gérés de bout en bout pour faire vivre et grandir vos affaires.</p>
+            </div>
+
+            <!-- Bento Layout: Left = Socle Commun, Right = Lead Care Tiers -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                <!-- Left: Shared benefits box -->
+                <div class="lg:col-span-4 bg-brand-bgGray border border-brand-border rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold text-brand-blue uppercase tracking-wider block">Le socle commun</span>
+                        <h3 class="text-base font-bold text-brand-dark mt-1">Toutes les offres comprennent :</h3>
+                        <ul class="space-y-2 mt-4 text-xs text-brand-slate font-light">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="text-brand-blue w-4 h-4 shrink-0"></i> Utilisation de SimpleHub
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="text-brand-blue w-4 h-4 shrink-0"></i> Reporting mensuel
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="text-brand-blue w-4 h-4 shrink-0"></i> Ticketing et suivi des demandes
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="text-brand-blue w-4 h-4 shrink-0"></i> Réunion mensuelle de pilotage
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="text-brand-blue w-4 h-4 shrink-0"></i> Supervision par nos équipes
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="text-brand-blue w-4 h-4 shrink-0"></i> Mise à jour des données dans votre CRM
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="text-brand-blue w-4 h-4 shrink-0"></i> Historisation des actions réalisées
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-brand-border">
+                        <p class="text-[10px] text-brand-lightSlate font-light italic">Nos processus s'articulent nativement autour de vos workflows métiers.</p>
+                    </div>
+                </div>
+
+                <!-- Right: Lead Care Packs -->
+                <div class="lg:col-span-8 space-y-4">
+                    <div class="bg-brand-blue/5 border border-brand-blue/20 rounded-xl p-5 space-y-2">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-base font-bold text-brand-dark">Lead Care</h3>
+                            <span class="text-xs font-semibold text-brand-blue">Ne laissez plus aucun lead sans réponse</span>
+                        </div>
+                        <p class="text-xs text-brand-slate font-light leading-relaxed">
+                            Nous prenons en charge vos leads entrants (web, téléphone, email), les qualifions et les affectons à la bonne personne ou au bon agenda.
+                        </p>
+                        <!-- Inclusions block -->
+                        <div class="pt-2">
+                            <span class="text-[10px] font-bold uppercase text-brand-slate tracking-wider block mb-1">Ce qui est inclus :</span>
+                            <div class="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-brand-slate font-light">
+                                <span>• Prise en charge des leads entrants</span>
+                                <span>• Qualification selon votre grille</span>
+                                <span>• Réponse au prospect</span>
+                                <span>• Affectation au collaborateur</span>
+                                <span>• Prise de rendez-vous</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lead Care Pricing Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="p-4 bg-white border border-brand-border rounded-xl text-center flex flex-col justify-between">
+                            <span class="text-[10px] font-bold text-brand-slate uppercase block">Care 100</span>
+                            <span class="text-lg font-black text-brand-blue mt-2">290 € HT <span class="text-xs font-normal text-brand-slate">/ mois</span></span>
+                            <p class="text-[10px] text-brand-slate mt-2 font-light">Jusqu'à 100 leads traités par mois</p>
+                        </div>
+                        <div class="p-4 bg-white border border-brand-border rounded-xl text-center flex flex-col justify-between">
+                            <span class="text-[10px] font-bold text-brand-slate uppercase block">Care 300</span>
+                            <span class="text-lg font-black text-brand-blue mt-2">590 € HT <span class="text-xs font-normal text-brand-slate">/ mois</span></span>
+                            <p class="text-[10px] text-brand-slate mt-2 font-light">Jusqu'à 300 leads traités par mois</p>
+                        </div>
+                        <div class="p-4 bg-white border-2 border-brand-blue rounded-xl text-center flex flex-col justify-between relative shadow-sm">
+                            <span class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-brand-blue text-white px-2 py-0.5 rounded-full text-[8px] font-bold uppercase tracking-wider">Populaire</span>
+                            <span class="text-[10px] font-bold text-brand-slate uppercase block pt-1">Care 1000</span>
+                            <span class="text-lg font-black text-brand-blue mt-2">990 € HT <span class="text-xs font-normal text-brand-slate">/ mois</span></span>
+                            <p class="text-[10px] text-brand-slate mt-2 font-light">Jusqu'à 1000 leads traités par mois</p>
+                        </div>
+                        <div class="p-4 bg-brand-bgGray border border-brand-border rounded-xl text-center flex flex-col justify-between">
+                            <span class="text-[10px] font-bold text-brand-dark uppercase block">Entreprise</span>
+                            <span class="text-base font-black text-brand-dark mt-2">Sur devis</span>
+                            <p class="text-[10px] text-brand-slate mt-2 font-light">Volumes supérieurs ou exigences spécifiques</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: LES OFFRES PACKAGÉES - LEAD ACTIVATION & MARKETING AUTOMATION -->
+        <div id="slide-9" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-1">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">Niveau 2 — Offres Packagées (B)</span>
+                <h2 class="text-2xl font-extrabold text-brand-dark">Lead Activation & Marketing Automation</h2>
+                <p class="text-xs text-brand-slate font-light">Développez des opportunités commerciales et faites vivre vos bases de données.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
+                <!-- Pack 1: Lead Activation -->
+                <div class="bento-card rounded-2xl p-6 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-start">
+                            <div class="bg-brand-blue/10 p-2.5 rounded-xl text-brand-blue">
+                                <i data-lucide="target" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-brand-blue bg-brand-blue/5 px-2.5 py-1 rounded-full uppercase tracking-wider">Lead Activation</span>
+                        </div>
+                        <h3 class="text-base font-bold text-brand-dark">Activez votre base de contacts</h3>
+                        <p class="text-xs text-brand-slate font-light leading-relaxed">
+                            Nous concevons et exécutons vos opérations commerciales afin de générer des opportunités, réactiver des prospects ou mobiliser votre base clients.
+                        </p>
+                        <div class="bg-white/85 p-3 rounded-xl border border-brand-border space-y-1 text-[11px] text-brand-slate font-light">
+                            <span class="font-bold block text-brand-dark">Inclus dans la formule :</span>
+                            <p>Définition de la cible • Création de landing page • Campagne d'emails automatisée • SMS (1 par contact) • Relances téléphoniques (jusqu'à 3 tentatives de prise de contact) • CRM & Reporting de campagne.</p>
+                        </div>
+                    </div>
+
+                    <!-- Activations Price Tiers -->
+                    <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 pt-2 border-t border-brand-border">
+                        <div class="text-center p-2 bg-brand-bgGray/50 rounded-lg border border-brand-border">
+                            <span class="text-[9px] font-bold block uppercase text-brand-slate">Activation 1000</span>
+                            <span class="text-xs font-bold text-brand-blue block mt-1">690 € HT</span>
+                            <span class="text-[8px] font-light text-brand-slate block mt-0.5">1 000 contacts</span>
+                        </div>
+                        <div class="text-center p-2 bg-brand-bgGray/50 rounded-lg border border-brand-border">
+                            <span class="text-[9px] font-bold block uppercase text-brand-slate">Activation 2500</span>
+                            <span class="text-xs font-bold text-brand-blue block mt-1">1 290 € HT</span>
+                            <span class="text-[8px] font-light text-brand-slate block mt-0.5">2 500 contacts</span>
+                        </div>
+                        <div class="text-center p-2 bg-brand-bgGray/50 rounded-lg border border-brand-border">
+                            <span class="text-[9px] font-bold block uppercase text-brand-slate">Activation 5000</span>
+                            <span class="text-xs font-bold text-brand-blue block mt-1">1 990 € HT</span>
+                            <span class="text-[8px] font-light text-brand-slate block mt-0.5">5 000 contacts</span>
+                        </div>
+                        <div class="text-center p-2 bg-brand-bgGray rounded-lg border border-brand-border flex items-center justify-center">
+                            <span class="text-[9px] font-bold text-brand-dark uppercase block">Entreprise : deVis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pack 2: Marketing Automation -->
+                <div class="bento-card rounded-2xl p-6 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-start">
+                            <div class="bg-brand-blue/10 p-2.5 rounded-xl text-brand-blue">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-brand-blue bg-brand-blue/5 px-2.5 py-1 rounded-full uppercase tracking-wider">Marketing Automation</span>
+                        </div>
+                        <h3 class="text-base font-bold text-brand-dark">Faites vivre votre base de données</h3>
+                        <p class="text-xs text-brand-slate font-light leading-relaxed">
+                            Nous créons et mettons en production vos campagnes automatisées afin de fidéliser vos clients et accompagner vos prospects dans leur parcours d'achat.
+                        </p>
+                        <div class="bg-white/85 p-3 rounded-xl border border-brand-border space-y-1 text-[11px] text-brand-slate font-light">
+                            <span class="font-bold block text-brand-dark">Inclus dans la formule :</span>
+                            <p>Définition de la cible • Création de la campagne (visuels inclus) • Paramétrage dans Hub Data & Marketing • Tests de délivrabilité • Mise en production • Reporting mensuel.</p>
+                            <p class="text-[10px] text-brand-slate italic mt-1 font-light block">Exemples: Fidélisation, Nurturing commercial, Relance de devis, Réactivation d'inactifs, Onboarding.</p>
+                        </div>
+                    </div>
+
+                    <!-- Automations Price Tiers -->
+                    <div class="space-y-2 pt-2 border-t border-brand-border">
+                        <div class="grid grid-cols-1 sm:grid-cols-4 gap-2">
+                            <div class="text-center p-2 bg-brand-bgGray/50 rounded-lg border border-brand-border">
+                                <span class="text-[9px] font-bold block uppercase text-brand-slate">Automation 1</span>
+                                <span class="text-xs font-bold text-brand-blue block mt-1">290 € HT</span>
+                                <span class="text-[8px] font-light text-brand-slate block mt-0.5">1 campagne/mois</span>
+                            </div>
+                            <div class="text-center p-2 bg-brand-bgGray/50 rounded-lg border border-brand-border">
+                                <span class="text-[9px] font-bold block uppercase text-brand-slate">Automation 3</span>
+                                <span class="text-xs font-bold text-brand-blue block mt-1">590 € HT</span>
+                                <span class="text-[8px] font-light text-brand-slate block mt-0.5">3 campagnes/mois</span>
+                            </div>
+                            <div class="text-center p-2 bg-brand-bgGray/50 rounded-lg border border-brand-border">
+                                <span class="text-[9px] font-bold block uppercase text-brand-slate">Automation 6</span>
+                                <span class="text-xs font-bold text-brand-blue block mt-1">990 € HT</span>
+                                <span class="text-[8px] font-light text-brand-slate block mt-0.5">6 campagnes/mois</span>
+                            </div>
+                            <div class="text-center p-2 bg-brand-bgGray rounded-lg border border-brand-border flex items-center justify-center">
+                                <span class="text-[9px] font-bold text-brand-dark uppercase block">Entreprise : devis</span>
+                            </div>
+                        </div>
+                        <div class="bg-brand-yellow/10 border-l-2 border-brand-yellow p-2 rounded-r-lg">
+                            <p class="text-[10px] text-brand-slate leading-relaxed">
+                                Note : les sms ne sont pas inclus mais facturés au réel 0,12 centimes d'euro.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: NIVEAU 3 : LES AGENTS IA SUR MESURE -->
+        <div id="slide-10" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-2">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">Niveau 3</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark">Niveau 3 : les agents IA sur mesure</h2>
+            </div>
+            
+            <p class="text-sm text-brand-slate font-light">
+                L'intelligence artificielle agentique n'est plus une expérimentation. C'est en train de devenir la nouvelle façon dont les entreprises opèrent leurs processus répétitifs.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch pt-2">
+                <div class="md:col-span-8 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <p class="text-sm text-brand-slate leading-relaxed font-light">
+                            Nous concevons et déployons des agents IA sur mesure pour vos processus métier, avec une conviction ferme : un agent qui tourne seul, sans supervision, est un risque, pas une solution. Chaque agent que nous déployons reste supervisé par une équipe humaine, avec des points de contrôle clairs avant toute action à conséquence.
+                        </p>
+                    </div>
+                    
+                    <div class="p-5 bg-brand-bgGray border border-brand-border rounded-xl space-y-2">
+                        <h4 class="text-xs font-bold text-brand-dark uppercase tracking-wider">Notre méthode</h4>
+                        <p class="text-xs text-brand-slate leading-relaxed font-light">
+                            Nous cadrons d'abord un cas d'usage précis et mesurable, jamais une automatisation généraliste qui promet tout et ne tient rien. Nous nous appuyons sur l'expertise technique d'Etalik, notre société sœur, qui développe déjà des outils métier, des CRM et des applications sur mesure pour ses clients.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-4 bg-brand-bgGray border-2 border-brand-yellow/30 rounded-2xl p-6 flex flex-col justify-center text-center space-y-4 shadow-sm">
+                    <div class="h-12 w-12 rounded-full bg-brand-yellow/10 flex items-center justify-center mx-auto">
+                        <i data-lucide="zap" class="text-brand-blue w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-brand-dark uppercase tracking-wider">Notre offre pilote</h3>
+                    <p class="text-xs text-brand-slate leading-relaxed font-light">
+                        Un premier agent déployé en 4 à 8 semaines, sur un périmètre défini avec vous, pour valider l'impact avant d'envisager un déploiement plus large.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: POLITIQUE RSE : ENGAGEMENT SOCIAL ET ENVIRONNEMENTAL -->
+        <div id="slide-11" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-1">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">RSE — Environnement & Sociétal</span>
+                <h2 class="text-2xl font-extrabold text-brand-dark">Engagement social et environnemental</h2>
+                <p class="text-xs text-brand-slate font-light">L'agent humain : intégrer l'éthique au cœur de l'infrastructure numérique.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+                <!-- Left Context Box -->
+                <div class="md:col-span-6 bg-brand-bgGray border border-brand-border rounded-2xl p-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-brand-blue uppercase tracking-wider block">Conscience carbone</span>
+                        <p class="text-sm text-brand-slate leading-relaxed font-light">
+                            Chez L’agent humain, nous reconnaissons que notre activité, reposant sur une infrastructure de serveurs et l’utilisation de logiciels, génère un impact carbone significatif.
+                        </p>
+                        <p class="text-xs text-brand-slate font-light leading-relaxed">
+                            C’est pourquoi nous nous engageons activement à réduire notre empreinte environnementale en mettant en place des actions concrètes en faveur de :
+                        </p>
+                        <ul class="space-y-2 text-xs text-brand-slate font-light pt-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-brand-blue font-bold">•</span>
+                                <span>La réduction de notre impact carbone par une optimisation de nos infrastructures numériques.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-brand-blue font-bold">•</span>
+                                <span>Le développement durable à Madagascar, en soutenant des initiatives locales qui favorisent l'éducation, la biodiversité et l'économie circulaire.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-brand-border mt-4 flex items-center justify-between">
+                        <a href="#" class="text-xs text-brand-blue hover:underline font-semibold flex items-center gap-1">
+                            Consultez notre démarche RSE ici <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Dual Impact Partners -->
+                <div class="md:col-span-6 flex flex-col gap-4">
+                    <!-- Partner 1: Deforestation -->
+                    <div class="bg-brand-bgGray border border-brand-border rounded-xl p-5 flex items-start gap-4">
+                        <div class="bg-[#2E7D32]/10 p-3 rounded-lg text-[#2E7D32]">
+                            <i data-lucide="trees" class="w-6 h-6"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-[9px] font-bold text-[#2E7D32] uppercase tracking-wider block">Impact environnemental — Cœur de Forêt</span>
+                            <h4 class="text-sm font-bold text-brand-dark">Lutte active contre la déforestation</h4>
+                            <p class="text-xs text-brand-slate font-light leading-relaxed">
+                                Nous reversons une partie de notre chiffre d’affaires pour soutenir leurs actions de lutte contre la déforestation avec l'association Cœur de Forêt.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Partner 2: Education -->
+                    <div class="bg-brand-bgGray border border-brand-border rounded-xl p-5 flex items-start gap-4">
+                        <div class="bg-brand-blue/10 p-3 rounded-lg text-brand-blue">
+                            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-[9px] font-bold text-brand-blue uppercase tracking-wider block">Impact sociétal — Scolarisation Madagascar</span>
+                            <h4 class="text-sm font-bold text-brand-dark">Accès à l'éducation de base</h4>
+                            <p class="text-xs text-brand-slate font-light leading-relaxed">
+                                Nous collaborons avec l’association Scolarisation Madagascar, qui agit pour l’accès à l’éducation des enfants malgaches.
+                            </p>
+                            <span class="text-[10px] text-brand-lightSlate font-normal block pt-1">
+                                Plus d'infos : <a href="https://scolarisation-madagascar.org" target="_blank" class="text-brand-blue hover:underline">scolarisation-madagascar.org</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: POLITIQUE RSE : BIEN-ÊTRE DES COLLABORATEURS -->
+        <div id="slide-12" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-1">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">RSE — Collaborateurs</span>
+                <h2 class="text-2xl font-extrabold text-brand-dark">Politique RSE : bien-être des collaborateurs</h2>
+                <p class="text-xs text-brand-slate font-light">Des engagements forts pour valoriser, sécuriser et fidéliser nos talents.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                <!-- Left: Avantages salariaux -->
+                <div class="bento-card rounded-2xl p-6 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <span class="text-[10px] font-bold text-brand-blue uppercase tracking-wider block">Avantages salariaux</span>
+                        <h3 class="text-base font-bold text-brand-dark">Rémunération et conditions de travail optimales</h3>
+                        
+                        <div class="space-y-3 pt-2 text-xs text-brand-slate">
+                            <div class="flex items-start gap-2.5">
+                                <span class="text-brand-blue font-bold mt-0.5">•</span>
+                                <div>
+                                    <strong class="text-brand-dark font-semibold">Salaire compétitif :</strong> Nos collaborateurs bénéficient d’une rémunération pouvant atteindre jusqu’à 11 fois la moyenne nationale à Madagascar, valorisant ainsi leurs compétences.
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="text-brand-blue font-bold mt-0.5">•</span>
+                                <div>
+                                    <strong class="text-brand-dark font-semibold">Participation aux résultats :</strong> Les collaborateurs partagent les bénéfices de leur performance.
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="text-brand-blue font-bold mt-0.5">•</span>
+                                <div>
+                                    <strong class="text-brand-dark font-semibold">13e mois garanti :</strong> Sécurité financière assurée en fin d'année.
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="text-brand-blue font-bold mt-0.5">•</span>
+                                <div>
+                                    <strong class="text-brand-dark font-semibold">Prise en charge des déplacements :</strong> Un service privé assure le transport domicile-travail, offrant confort et sécurité.
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="text-brand-blue font-bold mt-0.5">•</span>
+                                <div>
+                                    <strong class="text-brand-dark font-semibold">Repas offerts sur place :</strong> Une attention quotidienne pour le bien-être de nos équipes.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Protection sociale -->
+                <div class="bento-card rounded-2xl p-6 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <span class="text-[10px] font-bold text-brand-blue uppercase tracking-wider block">Protection sociale complète</span>
+                        <h3 class="text-base font-bold text-brand-dark">Une couverture santé et vie sans équivalent</h3>
+                        
+                        <div class="space-y-4 pt-2">
+                            <div class="p-3 bg-white border border-brand-border rounded-xl flex items-start gap-3">
+                                <div class="bg-[#1565C0]/10 p-2 rounded-lg text-[#1565C0] mt-0.5 shrink-0">
+                                    <i data-lucide="shield" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-xs font-semibold text-brand-dark block">Couverture santé premium avec Allianz</strong>
+                                    <span class="text-[11px] text-brand-slate font-light leading-relaxed block mt-0.5">Prise en charge à 100 % par Etalik, une offre rare et recherchée à Madagascar.</span>
+                                </div>
+                            </div>
+
+                            <div class="p-3 bg-white border border-brand-border rounded-xl flex items-start gap-3">
+                                <div class="bg-[#2E7D32]/10 p-2 rounded-lg text-[#2E7D32] mt-0.5 shrink-0">
+                                    <i data-lucide="activity" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-xs font-semibold text-brand-dark block">Mutuelle complémentaire Esia</strong>
+                                    <span class="text-[11px] text-brand-slate font-light leading-relaxed block mt-0.5">Une protection renforcée garantissant un accès à des soins médicaux de haut niveau.</span>
+                                </div>
+                            </div>
+
+                            <div class="p-3 bg-white border border-brand-border rounded-xl flex items-start gap-3">
+                                <div class="bg-[#EF6C00]/10 p-2 rounded-lg text-[#EF6C00] mt-0.5 shrink-0">
+                                    <i data-lucide="heart" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-xs font-semibold text-brand-dark block">Prévoyance complémentaire</strong>
+                                    <span class="text-[11px] text-brand-slate font-light leading-relaxed block mt-0.5">Une sécurité supplémentaire pour protéger l’avenir de nos équipes face aux aléas de la vie.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: PREUVES -->
+        <div id="slide-13" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-2">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">Cas d'usage</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark">Preuves</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+                <div class="bento-card rounded-2xl p-6 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <span class="text-[10px] font-bold text-brand-blue uppercase tracking-wider block">Diagnostic énergétique</span>
+                        <h3 class="text-base font-bold text-brand-dark">ACCEO</h3>
+                        <p class="text-xs text-brand-slate leading-relaxed font-light">
+                            17 postes déployés en 7 mois, sans perte de qualité.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-border mt-4">
+                        <span class="text-lg font-black text-brand-blue">500 000€</span>
+                        <span class="text-[10px] text-brand-slate block font-medium">d'économies annuelles sur les coûts opérationnels</span>
+                    </div>
+                </div>
+
+                <div class="bento-card rounded-2xl p-6 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <span class="text-[10px] font-bold text-brand-blue uppercase tracking-wider block">Plateforme avantages CSE</span>
+                        <h3 class="text-base font-bold text-brand-dark">Swibeco</h3>
+                        <p class="text-xs text-brand-slate leading-relaxed font-light">
+                            Une gestion opérationnelle fluidifiée, une charge administrative allégée pour les équipes internes.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-border mt-4">
+                        <span class="text-sm font-bold text-brand-blue block">Optimisation mesurable</span>
+                        <span class="text-[10px] text-brand-slate block">des processus de support client</span>
+                    </div>
+                </div>
+
+                <div class="bento-card rounded-2xl p-6 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <span class="text-[10px] font-bold text-brand-blue uppercase tracking-wider block">Éditeur SaaS Automobile</span>
+                        <h3 class="text-base font-bold text-brand-dark">Estorik</h3>
+                        <p class="text-xs text-brand-slate leading-relaxed font-light">
+                            Des livrables produits plus rapidement au quotidien.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-border mt-4">
+                        <span class="text-lg font-black text-brand-blue">190 000€</span>
+                        <span class="text-[10px] text-brand-slate block font-medium">économisés sur les coûts opérationnels</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-xs text-brand-slate font-light italic mt-4">
+                Le détail de chaque mission, les talents déployés et les témoignages complets sont disponibles dans notre portfolio, sur demande.
+            </p>
+        </div>
+
+        <!-- SLIDE 14: TARIFICATION -->
+        <div id="slide-14" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-2">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">Grille d'offres</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark">Tarification, trois modèles</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+                <div class="bento-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <span class="text-xs font-bold text-brand-blue block uppercase">Niveau 1</span>
+                        <h3 class="text-base font-bold text-brand-dark">Mise à disposition à temps plein</h3>
+                        <p class="text-xs text-brand-slate leading-relaxed font-light">
+                            Un collaborateur affecté à votre activité, encadré par nos équipes, formé à vos process.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-border">
+                        <span class="text-xs text-brand-lightSlate uppercase block font-semibold">Tarif</span>
+                        <span class="text-xl font-black text-brand-blue">À partir de 1 300€ / mois</span>
+                        <span class="text-[10px] text-brand-slate block">par talent dédié</span>
+                    </div>
+                </div>
+
+                <div class="bento-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <span class="text-xs font-bold text-brand-blue block uppercase">Niveau 2</span>
+                        <h3 class="text-base font-bold text-brand-dark">Opérations pilotées, par pack</h3>
+                        <p class="text-xs text-brand-slate leading-relaxed font-light">
+                            Tarification sur devis selon le volume traité (leads, contacts, campagnes). Reporting mensuel et supervision inclus dans chaque pack.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-border">
+                        <span class="text-xs text-brand-lightSlate uppercase block font-semibold">Tarif</span>
+                        <span class="text-xl font-black text-brand-dark">Sur devis</span>
+                        <span class="text-[10px] text-brand-slate block">ajusté au volume réel</span>
+                    </div>
+                </div>
+
+                <div class="bento-card rounded-2xl p-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <span class="text-xs font-bold text-brand-blue block uppercase">Niveau 3</span>
+                        <h3 class="text-base font-bold text-brand-dark">Agents IA sur mesure</h3>
+                        <p class="text-xs text-brand-slate leading-relaxed font-light">
+                            Tarification sur devis selon le périmètre du cas d'usage. Offre pilote disponible pour un premier agent déployé en 4 à 8 semaines.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-border">
+                        <span class="text-xs text-brand-lightSlate uppercase block font-semibold">Tarif</span>
+                        <span class="text-xl font-black text-brand-dark">Sur devis</span>
+                        <span class="text-[10px] text-brand-slate block">avec opportunité de phase pilote</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-brand-bgGray rounded-xl text-center border border-brand-border">
+                <p class="text-xs text-brand-slate leading-relaxed font-light">
+                    Zéro engagement long terme sur l'offre flexible. Une phase pilote de 3 mois, suivie d'un contrat de 12 mois renouvelable, pour les collaborations structurées dans la durée.
+                </p>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: CTA FINAL -->
+        <div id="slide-15" class="slide-content w-full max-w-6xl mx-auto space-y-6 hidden">
+            <div class="text-center md:text-left space-y-2">
+                <span class="text-xs font-bold text-brand-blue uppercase tracking-widest bg-brand-blue/5 px-3 py-1 rounded-full">Contact</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark">Prendre l'avance</h2>
+            </div>
+
+            <div class="border border-brand-border bg-brand-bgGray rounded-3xl p-8 md:p-12 text-center max-w-3xl mx-auto space-y-8 shadow-sm">
+                <div class="space-y-3">
+                    <h3 class="text-2xl font-bold text-brand-dark">Un besoin précis ou une question à poser avant de vous engager ?</h3>
+                    <p class="text-sm text-brand-slate font-light">
+                        Contactez-nous et recevez une réponse sous 48h.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-brand-border text-left">
+                    <div class="space-y-1">
+                        <span class="text-[10px] uppercase font-bold text-brand-lightSlate block">Téléphone</span>
+                        <a href="tel:0638161858" class="text-base font-bold text-brand-dark hover:text-brand-blue transition-colors block">06 38 16 18 58</a>
+                    </div>
+                    <div class="space-y-1 md:border-l md:border-brand-border md:pl-6">
+                        <span class="text-[10px] uppercase font-bold text-brand-lightSlate block">Adresse email</span>
+                        <a href="mailto:contact@etalik.com" class="text-base font-bold text-brand-dark hover:text-brand-blue transition-colors block">contact@etalik.com</a>
+                    </div>
+                    <div class="space-y-1 md:border-l md:border-brand-border md:pl-6">
+                        <span class="text-[10px] uppercase font-bold text-brand-lightSlate block">Site internet</span>
+                        <a href="https://agenthumain.fr" target="_blank" class="text-base font-bold text-brand-blue hover:underline block">agenthumain.fr</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER NAVIGATION BAR -->
+    <footer class="no-print w-full px-6 py-4 flex flex-col md:flex-row justify-between items-center bg-white border-t border-brand-border space-y-4 md:space-y-0 z-50">
+        <div class="flex items-center space-x-2">
+            <span class="text-xs text-brand-slate font-semibold uppercase tracking-wider" id="slide-indicator">Slide 1 / 16</span>
+            <span class="text-xs text-brand-border">•</span>
+            <span class="text-xs text-brand-blue font-medium">L'Agent Humain</span>
+        </div>
+        
+        <!-- Interactive slide dots -->
+        <div class="flex space-x-2" id="slide-dots">
+            <!-- Dynamically generated -->
+        </div>
+
+        <div class="flex space-x-4">
+            <button onclick="prevSlide()" class="px-4 py-2 rounded-lg bg-brand-bgGray border border-brand-border text-brand-dark hover:bg-brand-border transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none" id="btn-prev" disabled>
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+            <button onclick="nextSlide()" class="px-4 py-2 rounded-lg bg-brand-blue text-white font-bold hover:bg-brand-blue/90 transition-all duration-300" id="btn-next">
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE APP CONTROLLER -->
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 16; // Adjusted for the updated slides count
+
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            generateSlideDots();
+            updateSlideView();
+        });
+
+        // Toggle slides display
+        function updateSlideView() {
+            for (let i = 0; i < totalSlides; i++) {
+                const el = document.getElementById(`slide-${i}`);
+                if (el) el.classList.add('hidden');
+            }
+            document.getElementById(`slide-${currentSlide}`).classList.remove('hidden');
+
+            // Bottom metadata indicator
+            document.getElementById('slide-indicator').innerText = `Slide ${currentSlide + 1} / ${totalSlides}`;
+            
+            // Handle dot markers
+            const dots = document.querySelectorAll('.pagination-dot');
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active-dot');
+                } else {
+                    dot.classList.remove('active-dot');
+                }
+            });
+
+            // Adjust navigation triggers
+            document.getElementById('btn-prev').disabled = currentSlide === 0;
+            document.getElementById('btn-next').disabled = currentSlide === totalSlides - 1;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlideView();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlideView();
+            }
+        }
+
+        function jumpToSlide(index) {
+            currentSlide = index;
+            updateSlideView();
+        }
+
+        function generateSlideDots() {
+            const container = document.getElementById('slide-dots');
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = "pagination-dot h-2.5 w-2.5 rounded-full bg-slate-200 hover:bg-slate-400 transition-all duration-300";
+                dot.onclick = () => jumpToSlide(i);
+                container.appendChild(dot);
+            }
+        }
+
+        // Native keyboard binding for comfortable navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+</html>
