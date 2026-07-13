@@ -1126,7 +1126,36 @@
             initLucideIcons();
             generateSlideDots();
             updateSlideView();
+            openModalFromUrlParam();
         });
+
+        // Table de correspondance : identifiant court d'URL -> nom d'offre + prix + slide
+        const OFFER_LINKS = {
+            'lead-care-100': { name: 'Lead Care 100', price: '290 € HT / mois', slide: 11 },
+            'lead-care-300': { name: 'Lead Care 300', price: '590 € HT / mois', slide: 11 },
+            'lead-care-1000': { name: 'Lead Care 1000', price: '990 € HT / mois', slide: 11 },
+            'lead-care-entreprise': { name: 'Lead Care Entreprise', price: 'Sur devis', slide: 11 },
+            'activation-1000': { name: 'Activation 1000', price: '690 € HT / mois', slide: 12 },
+            'activation-2500': { name: 'Activation 2500', price: '1 290 € HT / mois', slide: 12 },
+            'activation-5000': { name: 'Activation 5000', price: '1 990 € HT / mois', slide: 12 },
+            'activation-entreprise': { name: 'Activation Entreprise', price: 'Sur devis', slide: 12 },
+            'automation-1': { name: 'Marketing Automation 1', price: '290 € HT / mois', slide: 13 },
+            'automation-3': { name: 'Marketing Automation 3', price: '590 € HT / mois', slide: 13 },
+            'automation-6': { name: 'Marketing Automation 6', price: '990 € HT / mois', slide: 13 },
+            'automation-entreprise': { name: 'Marketing Automation Entreprise', price: 'Sur devis', slide: 13 },
+            'staffing': { name: 'Staffing à temps plein', price: 'À partir de 1 300€ / mois', slide: 15 },
+            'agentique': { name: 'Agents IA sur mesure', price: 'Sur devis', slide: 15 },
+        };
+
+        function openModalFromUrlParam() {
+            const params = new URLSearchParams(window.location.search);
+            const offerKey = params.get('offre');
+            if (!offerKey || !OFFER_LINKS[offerKey]) return;
+
+            const offer = OFFER_LINKS[offerKey];
+            jumpToSlide(offer.slide);
+            setTimeout(() => openOfferModal(offer.name, offer.price), 300);
+        }
 
         // Toggle slides display
         function updateSlideView() {
